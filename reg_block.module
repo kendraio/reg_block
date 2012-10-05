@@ -24,7 +24,7 @@ function reg_block_block_view($delta = '') {
   switch ($delta) {
     case 'registration_block':
       global $user;
-      if (empty($user) || !$user->uid > 1) {
+      if (empty($user)) {
 	$block['subject'] = t('Register');
 	$block['content'] = drupal_render(drupal_get_form('user_register_form'));
       }
